@@ -10,9 +10,15 @@ void main()=>runApp(MaterialApp(
     body: Center(
       child: Text("Hello Coders"),
     ),
-    floatingActionButton: FloatingActionButton(
-      onPressed: () {  },
-      child: Text("Click"),
+    bottomNavigationBar: BottomAppBar(
+      shape: const CircularNotchedRectangle(),
+      child: Container(height: 50.0),
     ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: () =>{},
+      tooltip: 'Increment Counter',
+      child: const Icon(Icons.add),
+    ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
   ),
 ));
