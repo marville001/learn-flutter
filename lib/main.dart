@@ -16,9 +16,22 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Padding(
-        padding:EdgeInsets.all(20.0),
-        child: Text("Hello There"),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Hello There"),
+          FlatButton(
+              onPressed: (){},
+              child: Text("Click Me"),
+            color: Colors.amber,
+          ),
+          Container(
+            padding: EdgeInsets.all(20.0),
+            color: Colors.blueGrey[200],
+            child: Text("Inside Container"),
+          )
+        ],
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
