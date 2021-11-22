@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home()
-    ));
+void main() =>
+    runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: Home()));
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -16,24 +14,31 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.end,
+      body: Row(
         children: [
-          Container(
-            padding: const EdgeInsets.all(20.0),
-            color: Colors.cyan,
-            child: const Text("One"),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: const EdgeInsets.all(20.0),
+              color: Colors.cyan,
+              child: const Text("One"),
+            ),
           ),
-          Container(
-            padding: const EdgeInsets.all(30.0),
-            color: Colors.pinkAccent,
-            child: const Text("Two"),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: const EdgeInsets.all(20.0),
+              color: Colors.pinkAccent,
+              child: const Text("Two"),
+            ),
           ),
-          Container(
-            padding: const EdgeInsets.all(40.0),
-            color: Colors.amber,
-            child: const Text("Three"),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: const EdgeInsets.all(20.0),
+              color: Colors.amber,
+              child: const Text("Three"),
+            ),
           ),
         ],
       ),
