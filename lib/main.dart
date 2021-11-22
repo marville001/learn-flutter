@@ -16,10 +16,8 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Container(
-        color: Colors.grey[400],
-        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-        margin: EdgeInsets.all(20.0),
+      body: Padding(
+        padding:EdgeInsets.all(20.0),
         child: Text("Hello There"),
       ),
       bottomNavigationBar: BottomAppBar(
