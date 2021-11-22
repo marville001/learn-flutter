@@ -12,21 +12,15 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My App"),
+        title: const Text("My Favorite App"),
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: const Center(
-        child: Text(
-          "Hello Coders",
-          style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Colors.grey,
-              fontFamily: 'IndieFlower'
-          ),
-        ),
+      body: Container(
+        color: Colors.grey[400],
+        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        margin: EdgeInsets.all(20.0),
+        child: Text("Hello There"),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
