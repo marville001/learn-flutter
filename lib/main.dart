@@ -1,63 +1,100 @@
 import 'package:flutter/material.dart';
 
-void main() =>
-    runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: Home()));
-
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
-
-  @override
-  State<Home> createState() => _HomeState();
+void main() {
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: NinjaCard(),
+  ));
 }
 
-class _HomeState extends State<Home> {
+class NinjaCard extends StatefulWidget {
+  const NinjaCard({Key? key}) : super(key: key);
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("My Favorite App"),
-        centerTitle: true,
-        backgroundColor: Colors.red[600],
-      ),
-      body: Row(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: const EdgeInsets.all(20.0),
-              color: Colors.cyan,
-              child: const Text("One"),
-            ),
+        backgroundColor: Colors.grey[900],
+        appBar: AppBar(
+          title: const Text("Ninja ID Card"),
+          centerTitle: true,
+          backgroundColor: Colors.grey[850],
+          elevation: 0.0,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Center(
+                child: CircleAvatar(
+                  backgroundImage: AssetImage("assets/thumb.jpg"),
+                  radius: 40.0,
+                ),
+              ),
+              Divider(
+                height: 60.0,
+                color: Colors.grey[800],
+              ),
+              Text(
+                "NAME",
+                style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Martin Mwangi",
+                style: TextStyle(
+                    color: Colors.amberAccent,
+                    letterSpacing: 2.0,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 28.0),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                "CURRENT LEVEL",
+                style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "12",
+                style: TextStyle(
+                    color: Colors.amberAccent,
+                    letterSpacing: 2.0,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 28.0),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: const <Widget>[
+                  Icon(
+                    Icons.email,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(width: 10.0,),
+                  Text(
+                    "mwangimartin1904@gmail.com",
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 18.0,
+                        letterSpacing: 1.0
+                    ),
+                  )
+                ],
+              ),
+            ],
           ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: const EdgeInsets.all(20.0),
-              color: Colors.pinkAccent,
-              child: const Text("Two"),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: const EdgeInsets.all(20.0),
-              color: Colors.amber,
-              child: const Text("Three"),
-            ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: Container(height: 50.0),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => {},
-        tooltip: 'Increment Counter',
-        backgroundColor: Colors.red[600],
-        child: const Icon(Icons.add),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-    );
+        ));
   }
 }
