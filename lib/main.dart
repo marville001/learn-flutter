@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -16,97 +17,25 @@ class NinjaCard extends StatefulWidget {
 
 class _NinjaCardState extends State<NinjaCard> {
 
-  int ninjaLevel = 0;
+  List<Quote> quotes = [
+    Quote(text: "Quote 1", author: "Author 1"),
+    Quote(text: "Quote 2", author: "Author 2"),
+    Quote(text: "Quote 3", author: "Author 3"),
+    Quote(text: "Quote 4", author: "Author 4"),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[900],
         appBar: AppBar(
           title: const Text("Ninja ID Card"),
           centerTitle: true,
-          backgroundColor: Colors.grey[850],
+          backgroundColor: Colors.redAccent,
           elevation: 0.0,
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: (){
-            setState(() {
-              ninjaLevel +=1;
-            });
-          },
-          child: Icon(Icons.add),
-          backgroundColor: Colors.grey[800],
-        ),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Center(
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/thumb.jpg"),
-                  radius: 40.0,
-                ),
-              ),
-              Divider(
-                height: 60.0,
-                color: Colors.grey[800],
-              ),
-              Text(
-                "NAME",
-                style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                "Martin Mwangi",
-                style: TextStyle(
-                    color: Colors.amberAccent,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28.0),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Text(
-                "CURRENT LEVEL",
-                style: TextStyle(color: Colors.grey, letterSpacing: 2.0),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                "$ninjaLevel",
-                style: TextStyle(
-                    color: Colors.amberAccent,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28.0),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                children: const <Widget>[
-                  Icon(
-                    Icons.email,
-                    color: Colors.grey,
-                  ),
-                  SizedBox(width: 10.0,),
-                  Text(
-                    "mwangimartin1904@gmail.com",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 18.0,
-                        letterSpacing: 1.0
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: quotes.map((quote) => Text('${quote.text}')).toList()
         ));
   }
 }
