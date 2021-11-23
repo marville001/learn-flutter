@@ -35,7 +35,7 @@ class _NinjaCardState extends State<NinjaCard> {
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: quotes.map((quote) => Text('${quote.text}')).toList()
+          children: quotes.map((quote) => Text('${quote.text} - ${quote.author}')).toList()
         ));
   }
 }
